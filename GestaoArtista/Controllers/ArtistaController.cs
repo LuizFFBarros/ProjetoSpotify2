@@ -18,20 +18,6 @@ namespace GestaoArtista.Controllers
 
         public static AuthenticationHeaderValue Authorization;
 
-        //[HttpGet("{id}")]
-        //public async Task<string> Artista_ID(string id)
-        //{
-        //    var token = await Autorizacao.Controllers.AutenticacaoController.GetToken();
-        //    Authorization = new AuthenticationHeaderValue("Bearer", token);
-            
-        //    var client = new HttpClient();
-        //    client.DefaultRequestHeaders.Authorization = Authorization;
-        //    var request = client.GetAsync($"{adressBase}/artists/{id}");
-        //    var response = await request.Result.Content.ReadAsStringAsync();
-        //    return response;
-
-        //}
-
         [HttpGet("{nome}")]
         public async Task<string> Artistas(string nome)
         {

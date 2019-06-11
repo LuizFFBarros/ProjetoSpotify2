@@ -25,12 +25,15 @@ namespace Autorizacao.Controllers
         public static async Task<string> GetToken()
         {
             var param = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{Client_ID}:{Client_Secret}"));
+            var scopo = Convert.ToBase64String(Encoding.UTF8.GetBytes("playlist-read-private")); 
             List<KeyValuePair<string, string>> args = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("grant_type", "client_credentials")
             };
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Authorization", $"Basic {param}");
+            client.DefaultRequestHeaders.Add("scope", scopo);
+
             HttpContent content = new FormUrlEncodedContent(args);
 
             HttpResponseMessage response = await client.PostAsync("https://accounts.spotify.com/api/token", content);
