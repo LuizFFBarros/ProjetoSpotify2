@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoArtista", "GestaoArtista\GestaoArtista.csproj", "{22E56F3F-CE3E-4B29-92A3-39461486EAAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaoArtista", "GestaoArtista\GestaoArtista.csproj", "{22E56F3F-CE3E-4B29-92A3-39461486EAAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoPlaylist", "GestaoPlaylist\GestaoPlaylist.csproj", "{0AA6DA92-BB18-43AA-B44C-6819701BB001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestaoPlaylist", "GestaoPlaylist\GestaoPlaylist.csproj", "{0AA6DA92-BB18-43AA-B44C-6819701BB001}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autenticacao", "Autenticacao\Autenticacao.csproj", "{1B6CE135-632D-4D38-951C-F55F9621C967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autorizacao", "Autorizacao\Autorizacao.csproj", "{47D3713F-B1E7-4E1A-A1CD-D8F37D24E66B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1B6CE135-632D-4D38-951C-F55F9621C967}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B6CE135-632D-4D38-951C-F55F9621C967}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B6CE135-632D-4D38-951C-F55F9621C967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D3713F-B1E7-4E1A-A1CD-D8F37D24E66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D3713F-B1E7-4E1A-A1CD-D8F37D24E66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D3713F-B1E7-4E1A-A1CD-D8F37D24E66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D3713F-B1E7-4E1A-A1CD-D8F37D24E66B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
