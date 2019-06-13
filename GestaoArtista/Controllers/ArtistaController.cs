@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace GestaoArtista.Controllers
 {
-    [Route("api/atista")]
+    [Route("api/artista")]
     [ApiController]
 
     public class ArtistaController : ControllerBase
@@ -57,7 +57,7 @@ namespace GestaoArtista.Controllers
 
         }
 
-        public async Task<string> RattingAtistAsync(string nomeArtista, int voto, string userId)
+        async Task<string> Rattingartistasync(string nomeArtista, int voto, string userId)
         {
             var artistaJson = await Artistas(nomeArtista);
             var artistaObjeto = JsonConvert.DeserializeObject<object>(artistaJson);

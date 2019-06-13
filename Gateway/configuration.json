@@ -1,0 +1,38 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/artista/{nome}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/artista/{nome}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/letra/{musica}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/letra/{musica}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/playlist/me",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/playlist/me"
+    }
+  ],
+  "GlobalConfiguration": {}
+}
