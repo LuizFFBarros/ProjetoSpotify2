@@ -1,10 +1,12 @@
-﻿using System.Collections.Specialized;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using Autorizacao;
+using GestaoArtista.Negocio;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -12,9 +14,23 @@ namespace GestaoArtista.Controllers
 {
     [Route("api/atista")]
     [ApiController]
+
     public class ArtistaController : ControllerBase
     {
+
         string adressBase = "https://api.spotify.com/v1";
+        List<ArtitasRating> artistaRating ;
+        AvaliacaoArtista avaliacao;
+
+        public ArtistaController()
+        {
+            if (artistaRating == null)
+            {
+                artistaRating = new List<ArtitasRating>();
+                avaliacao = new AvaliacaoArtista();
+                avaliacao.ArtistasRating = artistaRating;
+            }
+        }
 
         public static AuthenticationHeaderValue Authorization;
 
@@ -41,6 +57,15 @@ namespace GestaoArtista.Controllers
 
         }
 
+        public async Task<string> RattingAtistAsync(string nomeArtista, int voto, string userId)
+        {
+            var artistaJson = await Artistas(nomeArtista);
+            var artistaObjeto = JsonConvert.DeserializeObject<object>(artistaJson);
+
+            avaliacao.Votar(nomeArtista, voto, userId);
+            return "Voto Realizado";
+
+        }
 
         private string ToQueryString(NameValueCollection nvc)
         {
@@ -51,4 +76,7 @@ namespace GestaoArtista.Controllers
             return "?" + string.Join("&", array).Replace("+", "%20");
         }
     }
+
+   
+
 }
